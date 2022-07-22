@@ -696,7 +696,6 @@ input, select, textarea {
 
 		.image.main {
 			display: block;
-			margin: 0rem 0;
 			width: 100%;
 		}
 
@@ -707,7 +706,6 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			.image.main {
-				margin: 2rem 0;
 			}
 
 		}
@@ -715,7 +713,6 @@ input, select, textarea {
 		@media screen and (max-width: 480px) {
 
 			.image.main {
-				margin: 1.5rem 0;
 			}
 
 		}
