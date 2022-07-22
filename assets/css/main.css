@@ -1638,10 +1638,11 @@ input, select, textarea {
 
 		#footer .copyright {
 			letter-spacing: 0.2rem;
-			font-size: 0.6rem;
-			opacity: 0.75;
+			font-size: 0.7rem;
+			opacity: 1.00;
 			margin-bottom: 0;
 			text-transform: uppercase;
+			font-weight: 600;
 		}
 
 		body.is-article-visible #footer {
