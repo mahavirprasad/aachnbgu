@@ -45,33 +45,40 @@
   left: 20px;
   background-color: #0a418f;
   color: white;
-  padding: 12px 18px;
+  padding: 20px 24px;
   box-sizing: border-box;
   border-radius: 8px;
   z-index: 10000;
   display: none; /* Hidden by default */
+  flex-direction: column;
   align-items: center;
   gap: 15px;
   font-family: Arial, sans-serif;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  text-align: center;
+  max-width: 180px;
+  user-select: none;
 ">
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKPXfTZd2FKCNIs8WbbIa4ZYgQSLiwiW7T2YUcp3Ru2mpqPw/viewform" target="_blank" rel="noopener" style="
     background-color: #ffcc00;
     color: #0a418f;
     font-weight: 700;
-    padding: 10px 24px;
-    font-size: 1rem;
+    padding: 12px 28px;
+    font-size: 1.1rem;
     text-decoration: none;
     border-radius: 6px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    cursor: pointer;
-    white-space: nowrap;
     display: inline-block;
+    width: 100%;
   ">
     Registration
   </a>
-  <img src="https://github.com/mahavirprasad/aachnbgu/blob/main/images/qr-code.png?raw=true" alt="Registration QR Code" style="width: 60px; height: 60px; border: 2px solid white; border-radius: 8px;">
+  <img src="https://github.com/mahavirprasad/aachnbgu/blob/main/images/qr-code.png?raw=true" alt="Registration QR Code" style="width: 140px; height: 140px; border: 2px solid white; border-radius: 12px;">
+  <div style="color: #ffcc00; font-weight: 700; font-size: 0.9rem; margin-top: 8px;">
+    Scroll down for more.
+  </div>
 </div>
 
 <script>
@@ -83,14 +90,25 @@
     const banner = document.getElementById('registration-banner');
     if (isLaptop()) {
       banner.style.display = 'flex';
+      banner.scrollIntoView({ behavior: 'smooth' });
+
+      // Hide banner after 10 seconds
+      setTimeout(() => {
+        banner.style.transition = 'opacity 0.5s ease';
+        banner.style.opacity = '0';
+        setTimeout(() => {
+          banner.style.display = 'none';
+        }, 500);
+      }, 10000);
     }
   });
 
-  // Optional: also update display on window resize dynamically
   window.addEventListener('resize', function() {
     const banner = document.getElementById('registration-banner');
     if (isLaptop()) {
-      banner.style.display = 'flex';
+      if (banner.style.display !== 'flex') {
+        banner.style.display = 'flex';
+      }
     } else {
       banner.style.display = 'none';
     }
