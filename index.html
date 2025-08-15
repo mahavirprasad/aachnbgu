@@ -38,101 +38,64 @@
 
 
 
-<!-- Conference Banner -->
-<div id="conference-banner" style="
+<!-- Registration Banner (Only on laptops) -->
+<div id="registration-banner" style="
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 20px;
+  left: 20px;
   background-color: #0a418f;
   color: white;
-  padding: 20px 30px;
+  padding: 12px 18px;
   box-sizing: border-box;
-  text-align: center;
+  border-radius: 8px;
   z-index: 10000;
-  display: none; /* Hide by default, show only on laptops */
-  flex-wrap: wrap;
-  justify-content: center;
+  display: none; /* Hidden by default */
   align-items: center;
-  gap: 30px;
+  gap: 15px;
   font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 ">
-  <div style="flex: 1 1 350px; min-width: 300px; text-align: left;">
-    <h2 style="margin: 0 0 8px 0; font-weight: 700; font-size: 1.7rem;">
-      THIRD INTERNATIONAL MULTIDISCIPLINARY CONFERENCE ON<br>
-      AEROSOLS, AIR QUALITY AND CLIMATE CHANGE (IMCAAC‑2025)<br>
-      OVER THE HIMALAYAN REGION
-    </h2>
-    <p style="margin: 6px 0; font-size: 1rem;">
-      (Aligned with the Objectives and Themes of Bharat's National Education Policy 2020)
-    </p>
-    <p style="margin: 6px 0; font-size: 1rem; font-style: italic;">
-      "हिमालयी क्षेत्र में एरोसोल, वायु गुणवत्ता और जलवायु परिवर्तन पर तृतीय वार्षिक अंतरराष्ट्रीय संगोष्ठी — (भारत की राष्ट्रीय शिक्षा नीति 2020 के उद्देश्यों और विषयवस्तु के अनुरूप)"
-    </p>
-    <p style="font-weight: 700; font-size: 1.1rem; margin: 10px 0;">
-      4th – 6th October 2025
-    </p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKPXfTZd2FKCNIs8WbbIa4ZYgQSLiwiW7T2YUcp3Ru2mpqPw/viewform" target="_blank" rel="noopener" style="
-      background-color: #ffcc00;
-      color: #0a418f;
-      font-weight: 700;
-      padding: 12px 32px;
-      font-size: 1rem;
-      text-decoration: none;
-      border-radius: 6px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      display: inline-block;
-      cursor: pointer;
-    ">
-      Registration
-    </a>
-  </div>
-  <div style="flex: 0 0 160px; display: flex; justify-content: center; align-items: center;">
-    <img src="https://github.com/mahavirprasad/aachnbgu/blob/main/images/qr-code.png?raw=true" alt="Registration QR Code" style="max-width: 140px; border: 2px solid white; border-radius: 10px;">
-  </div>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKPXfTZd2FKCNIs8WbbIa4ZYgQSLiwiW7T2YUcp3Ru2mpqPw/viewform" target="_blank" rel="noopener" style="
+    background-color: #ffcc00;
+    color: #0a418f;
+    font-weight: 700;
+    padding: 10px 24px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    white-space: nowrap;
+    display: inline-block;
+  ">
+    Registration
+  </a>
+  <img src="https://github.com/mahavirprasad/aachnbgu/blob/main/images/qr-code.png?raw=true" alt="Registration QR Code" style="width: 60px; height: 60px; border: 2px solid white; border-radius: 8px;">
 </div>
 
 <script>
   function isLaptop() {
-    return window.innerWidth >= 1024; // Typical laptop screen width minimum
+    return window.innerWidth >= 1024; // Laptop width or larger
   }
 
   window.addEventListener('load', function() {
-    const banner = document.getElementById('conference-banner');
-    const homepage = document.getElementById('homepage-content');
-
+    const banner = document.getElementById('registration-banner');
     if (isLaptop()) {
       banner.style.display = 'flex';
-      homepage.style.pointerEvents = 'none';
+    }
+  });
 
-      // Add padding to body top equal to banner height to prevent content shift
-      const bannerHeight = banner.offsetHeight;
-      document.body.style.paddingTop = bannerHeight + 'px';
-
-      homepage.style.opacity = '1'; // Keep opacity 1 to prevent flicker
-
-      setTimeout(() => {
-        banner.style.transition = 'opacity 0.5s ease';
-        banner.style.opacity = '0';
-
-        homepage.style.pointerEvents = 'auto';
-
-        // Remove padding and hide banner after fade out
-        setTimeout(() => {
-          banner.style.display = 'none';
-          document.body.style.paddingTop = '0';
-        }, 500);
-      }, 5000);
+  // Optional: also update display on window resize dynamically
+  window.addEventListener('resize', function() {
+    const banner = document.getElementById('registration-banner');
+    if (isLaptop()) {
+      banner.style.display = 'flex';
     } else {
-      // On non-laptop devices, show homepage normally
-      homepage.style.opacity = '1';
-      homepage.style.pointerEvents = 'auto';
+      banner.style.display = 'none';
     }
   });
 </script>
-
-
 
 
 		
