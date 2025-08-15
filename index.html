@@ -36,6 +36,99 @@
 </head>
 	<body class="is-preload">
 
+
+
+<!-- Conference Banner -->
+<div id="conference-banner" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0a418f;
+  color: white;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 10000;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  font-family: Arial, sans-serif;
+">
+  <div style="flex: 1 1 350px; min-width: 300px; text-align: left;">
+    <h2 style="margin: 0 0 8px 0; font-weight: 700; font-size: 1.7rem;">
+      THIRD INTERNATIONAL MULTIDISCIPLINARY CONFERENCE ON<br>
+      AEROSOLS, AIR QUALITY AND CLIMATE CHANGE (IMCAAC‑2025)<br>
+      OVER THE HIMALAYAN REGION
+    </h2>
+    <p style="margin: 6px 0; font-size: 1rem;">
+      (Aligned with the Objectives and Themes of Bharat's National Education Policy 2020)
+    </p>
+    <p style="margin: 6px 0; font-size: 1rem; font-style: italic;">
+      "हिमालयी क्षेत्र में एरोसोल, वायु गुणवत्ता और जलवायु परिवर्तन पर तृतीय वार्षिक अंतरराष्ट्रीय संगोष्ठी — (भारत की राष्ट्रीय शिक्षा नीति 2020 के उद्देश्यों और विषयवस्तु के अनुरूप)"
+    </p>
+    <p style="font-weight: 700; font-size: 1.1rem; margin: 10px 0;">
+      4th – 6th October 2025
+    </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKPXfTZd2FKCNIs8WbbIa4ZYgQSLiwiW7T2YUcp3Ru2mpqPw/viewform" target="_blank" rel="noopener" style="
+      background-color: #ffcc00;
+      color: #0a418f;
+      font-weight: 700;
+      padding: 12px 32px;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-block;
+      cursor: pointer;
+    ">
+      Registration
+    </a>
+  </div>
+  <div style="flex: 0 0 160px; display: flex; justify-content: center; align-items: center;">
+    <img src="https://github.com/mahavirprasad/aachnbgu/blob/main/images/qr-code.png?raw=true" alt="Registration QR Code" style="max-width: 140px; border: 2px solid white; border-radius: 10px;">
+  </div>
+</div>
+
+<!-- Homepage content container -->
+<div id="homepage-content" style="opacity: 0; transition: opacity 0.5s ease;">
+  <!-- Put your homepage content here -->
+  <h1>Welcome to the Conference Website</h1>
+  <p>Explore all the conference details, speakers, sessions, and more.</p>
+  <!-- etc. -->
+</div>
+
+<script>
+  window.addEventListener('load', function() {
+    const banner = document.getElementById('conference-banner');
+    const homepage = document.getElementById('homepage-content');
+
+    banner.style.display = 'flex';
+    homepage.style.opacity = '0';
+    homepage.style.pointerEvents = 'none';
+
+    setTimeout(() => {
+      banner.style.transition = 'opacity 0.5s ease';
+      banner.style.opacity = '0';
+
+      homepage.style.opacity = '1';
+      homepage.style.pointerEvents = 'auto';
+
+      setTimeout(() => {
+        banner.style.display = 'none';
+      }, 500);
+    }, 5000);
+  });
+</script>
+
+
+
+
+		
+
 		<!-- Wrapper -->
 			<div id="wrapper">
 
