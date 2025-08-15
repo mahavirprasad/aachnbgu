@@ -50,7 +50,7 @@
   box-sizing: border-box;
   text-align: center;
   z-index: 10000;
-  display: flex;
+  display: none; /* Hide by default, show only on laptops */
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -93,34 +93,42 @@
   </div>
 </div>
 
-<!-- Homepage content container -->
-<div id="homepage-content" style="opacity: 0; transition: opacity 0.5s ease;">
-  <!-- Put your homepage content here -->
-  <h1>Welcome to the Conference Website</h1>
-  <p>Explore all the conference details, speakers, sessions, and more.</p>
-  <!-- etc. -->
-</div>
-
 <script>
+  function isLaptop() {
+    return window.innerWidth >= 1024; // Typical laptop screen width minimum
+  }
+
   window.addEventListener('load', function() {
     const banner = document.getElementById('conference-banner');
     const homepage = document.getElementById('homepage-content');
 
-    banner.style.display = 'flex';
-    homepage.style.opacity = '0';
-    homepage.style.pointerEvents = 'none';
+    if (isLaptop()) {
+      banner.style.display = 'flex';
+      homepage.style.pointerEvents = 'none';
 
-    setTimeout(() => {
-      banner.style.transition = 'opacity 0.5s ease';
-      banner.style.opacity = '0';
+      // Add padding to body top equal to banner height to prevent content shift
+      const bannerHeight = banner.offsetHeight;
+      document.body.style.paddingTop = bannerHeight + 'px';
 
-      homepage.style.opacity = '1';
-      homepage.style.pointerEvents = 'auto';
+      homepage.style.opacity = '1'; // Keep opacity 1 to prevent flicker
 
       setTimeout(() => {
-        banner.style.display = 'none';
-      }, 500);
-    }, 5000);
+        banner.style.transition = 'opacity 0.5s ease';
+        banner.style.opacity = '0';
+
+        homepage.style.pointerEvents = 'auto';
+
+        // Remove padding and hide banner after fade out
+        setTimeout(() => {
+          banner.style.display = 'none';
+          document.body.style.paddingTop = '0';
+        }, 500);
+      }, 5000);
+    } else {
+      // On non-laptop devices, show homepage normally
+      homepage.style.opacity = '1';
+      homepage.style.pointerEvents = 'auto';
+    }
   });
 </script>
 
