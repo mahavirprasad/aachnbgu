@@ -167,7 +167,7 @@
     padding: 0;
     margin: 0;
     overflow-x: auto; /* enable horizontal scroll if needed */
-    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     scrollbar-color: #888 transparent;
   }
@@ -177,12 +177,13 @@
     display: flex;
     align-items: center;
   }
+  /* Vertical separator line between items */
   .conference-nav li:not(:last-child)::after {
     content: '';
     position: absolute;
-    right: -6px; /* close to edge */
+    right: -6px;
     width: 1px;
-    height: 20px; /* subtle vertical line */
+    height: 20px;
     background: #fff;
     opacity: 0.6;
   }
@@ -192,14 +193,16 @@
     font-weight: 600;
     text-transform: uppercase;
     font-size: 1rem;
-    text-decoration: none;
-    padding: 10px 8px; /* balanced clickable area */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 8px;
     letter-spacing: 0.5px;
     transition: color 0.3s ease;
+    border: none; /* Remove button-like borders if any */
+    background: none; /* Remove button background */
   }
   .conference-nav a:hover,
   .conference-nav a:focus {
-    color: #ffcc00; /* gold highlight */
+    color: #ffcc00; /* Gold highlight */
     outline: none;
   }
   /* Responsive adjustments */
