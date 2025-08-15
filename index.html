@@ -141,12 +141,13 @@
     <li><a href="#themes">THEMES</a></li>
     <li><a href="#speakers">SPEAKERS</a></li>
     <li><a href="#dates">IMPORTANT DATES</a></li>
-    <li><a href="#registration">REGISTRATION</a></li>
+    <li><a href="#registration" class="blink">REGISTRATION</a></li>
     <li><a href="#abstract">ABSTRACT</a></li>
     <li><a href="download/IMCAAC-2025-HNBGU-Brochure.pdf" target="_blank" rel="noopener noreferrer">BROCHURE</a></li>
     <li><a href="#contact">CONTACT</a></li>
   </ul>
 </nav>
+
 <style>
   .conference-nav {
     background: #0a418f;
@@ -201,8 +202,16 @@
   .conference-nav a:hover,
   .conference-nav a:focus {
     outline: none;
-    background-color: rgba(255, 204, 0, 0.2); /* subtle background highlight on hover */
+    background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
+  }
+  /* Blink effect for Registration */
+  @keyframes blink-animation {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+  }
+  .blink {
+    animation: blink-animation 1.5s infinite;
   }
   /* Responsive adjustments */
   @media (max-width: 600px) {
