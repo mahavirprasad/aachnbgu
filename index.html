@@ -64,20 +64,21 @@
     background-color: #ffcc00;
     color: #0a418f;
     font-weight: 700;
-    padding: 12px 28px;
-    font-size: 1.1rem;
+    padding: 8px 14px;
+    font-size: 0.8rem;
     text-decoration: none;
     border-radius: 6px;
     text-transform: uppercase;
     letter-spacing: 1px;
     display: inline-block;
-    width: 100%;
+    width: auto;
+    white-space: nowrap;
   ">
     Registration
   </a>
   <img src="https://github.com/mahavirprasad/aachnbgu/blob/main/images/qr-code.png?raw=true" alt="Registration QR Code" style="width: 140px; height: 140px; border: 2px solid white; border-radius: 12px;">
-  <div style="color: #ffcc00; font-weight: 700; font-size: 0.9rem; margin-top: 8px;">
-    Scroll down for more.
+  <div style="color: white; font-weight: 700; font-size: 0.9rem; margin-top: 8px;">
+    Scroll down for more
   </div>
 </div>
 
@@ -92,14 +93,14 @@
       banner.style.display = 'flex';
       banner.scrollIntoView({ behavior: 'smooth' });
 
-      // Hide banner after 10 seconds
+      // Hide banner after 20 seconds
       setTimeout(() => {
         banner.style.transition = 'opacity 0.5s ease';
         banner.style.opacity = '0';
         setTimeout(() => {
           banner.style.display = 'none';
         }, 500);
-      }, 10000);
+      }, 20000);
     }
   });
 
@@ -108,13 +109,13 @@
     if (isLaptop()) {
       if (banner.style.display !== 'flex') {
         banner.style.display = 'flex';
+        banner.style.opacity = '1';
       }
     } else {
       banner.style.display = 'none';
     }
   });
 </script>
-
 
 		
 
