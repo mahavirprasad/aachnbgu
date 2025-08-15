@@ -715,8 +715,8 @@
 <!-- Conference Information -->
 <article id="registration">
 
-    <!-- Conference Overview & Key Dates -->
-    <h2 class="major">Conference Overview & Key Dates</h2>
+    <!-- Headline -->
+    <h2 class="major headline">Registration is Open</h2>
     <p class="justify">
         The International Conference on Aerosol, Air Quality and Climate Change (IMCAAC‑2025) 
         will be held in Srinagar Garhwal from 
@@ -729,11 +729,11 @@
     </ul>
 
     <!-- Registration -->
-    <h2 class="major">Registration</h2>
+    <h2 id="registration-form" class="major">Registration</h2>
     <p class="justify">
         Click to register via G‑Form:
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKPXfTZd2FKCNIs8WbbIa4ZYgQSLiwiW7T2YUcp3Ru2mpqPw/viewform" target="_blank">
-            <span class="blink">CLICK HERE</span>
+            CLICK HERE
         </a>
     </p>
     <p class="justify">
@@ -746,12 +746,7 @@
 
     <!-- Registration Fees -->
     <h2 class="major">Registration Fees</h2>
-    <p class="justify">
-        The following conference registration fees apply:*  
-        <small>*Payment procedure will be communicated via: 
-        <a href="https://aachnbgu.aaccrs.org/#registration" target="_blank">https://aachnbgu.aaccrs.org/#registration</a></small>
-    </p>
-
+    <p class="justify">The following conference registration fees apply:</p>
     <div class="table-wrap">
         <table class="fee-table">
             <thead>
@@ -828,8 +823,11 @@
         Mr. Ajay Kumar – <a href="https://wa.me/917060935880" target="_blank">+91‑7060935880</a>
     </p>
 
-    <!-- Valedictory Session -->
+    <!-- Valedictory Session (with Banner) -->
     <h2 class="major">Valedictory Session at Badrinath</h2>
+    <p class="center">
+        <img src="images/badrinath-banner.png" alt="Badrinath Banner" class="banner-img">
+    </p>
     <p class="justify">
         The valedictory session will be held on <strong>06 October 2025</strong> at <strong>Badrinath</strong> 
         (200 km from Srinagar, Uttarakhand, elevation 3,133m).  
@@ -858,6 +856,57 @@
     </p>
 
 </article>
+
+<!-- Auto-scroll Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+        var target = document.getElementById("registration-form");
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+        }
+    }, 5000); // 5 seconds delay
+});
+</script>
+
+<!-- Styles -->
+<style>
+    .justify { text-align: justify; }
+    .center { text-align: center; margin-top: 15px; }
+    .headline {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    .fee-table, .bank-table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 10px;
+    }
+    th, td {
+        border: 1px solid #000;
+        padding: 8px;
+        text-align: left;
+    }
+    .table-wrap { overflow-x: auto; }
+    .qr-code {
+        max-width: 250px;
+        height: auto;
+        margin-top: 10px;
+    }
+    .banner-img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 10px auto;
+    }
+    /* Mobile Responsiveness */
+    @media screen and (max-width: 600px) {
+        th, td { font-size: 14px; }
+        .qr-code { max-width: 180px; }
+    }
+</style>
 
 <!-- Styles -->
 <style>
