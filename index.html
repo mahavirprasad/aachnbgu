@@ -133,20 +133,68 @@
         </div>
       </div>
 
-      <!-- Navigation -->
-      <nav>
-        <ul>
-          <li><a href="#conference">Conference</a></li>
-          <li><a href="#committees">Committees</a></li>
-          <li><a href="#themes">Themes</a></li>
-          <li><a href="#speakers">Speakers</a></li>
-          <li><a href="#dates">Important Dates</a></li>
-          <li><a href="#registration">Registration</a></li>
-          <li><a href="#abstract">Abstract</a></li>
-          <li><a href="download/IMCAAC-2025-HNBGU-Brochure.pdf">Brochure</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+<!-- Navigation -->
+<nav aria-label="Main navigation">
+  <ul class="nav-list">
+    <li><a href="#conference">Conference</a></li>
+    <li><a href="#committees">Committees</a></li>
+    <li><a href="#themes">Themes</a></li>
+    <li><a href="#speakers">Speakers</a></li>
+    <li><a href="#dates">Important Dates</a></li>
+    <li><a href="#registration">Registration</a></li>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="download/IMCAAC-2025-HNBGU-Brochure.pdf" target="_blank" rel="noopener noreferrer">Brochure</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<style>
+  /* Navigation Styles */
+  nav {
+    background-color: #004080; /* University brand color */
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-list li {
+    margin: 0 1rem;
+  }
+
+  .nav-list a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .nav-list a:hover,
+  .nav-list a:focus {
+    color: #ffcc00; /* Highlight color */
+    outline: none;
+  }
+
+  /* Responsive Navigation */
+  @media (max-width: 600px) {
+    .nav-list {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nav-list li {
+      margin: 0.5rem 0;
+    }
+  }
+</style>
+		
     </header>
 
     <!-- Main content starts -->
