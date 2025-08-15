@@ -1286,13 +1286,25 @@ document.addEventListener("DOMContentLoaded", function () {
         margin: 40px auto;
         padding: 0 20px;
         font-family: Arial, sans-serif;
-        color: #333;
+        color: #fff;
+        background-color: transparent;
+    }
+    #contact h2.major,
+    #contact h3 {
+        text-align: center;
+        font-weight: bold;
+        color: #fff;
     }
     #contact h2.major {
-        text-align: center;
-        margin-bottom: 30px;
-        font-weight: bold;
         font-size: 2em;
+        margin-bottom: 30px;
+    }
+    #contact h3 small {
+        display: block;
+        font-weight: 400;
+        font-size: 0.9em;
+        color: #ddd;
+        margin-top: 4px;
     }
     .contact-list {
         display: grid;
@@ -1300,36 +1312,26 @@ document.addEventListener("DOMContentLoaded", function () {
         gap: 25px;
         margin-bottom: 40px;
     }
-    .contact-person h3 {
-        margin: 0 0 6px 0;
-        font-size: 1.2em;
-        font-weight: 700;
-        color: #0a418f;
-    }
-    .contact-person h3 small {
-        display: block;
-        font-weight: 400;
-        font-size: 0.9em;
-        color: #555;
-        margin-top: 2px;
-    }
-    .contact-person p {
+    .contact-person p,
+    .general-contact p,
+    .registration-note p {
         margin: 6px 0 0 0;
         font-size: 0.95em;
         line-height: 1.4;
+        color: #fff;
     }
     a {
-        color: #0a418f;
-        text-decoration: none;
-    }
-    a:hover, a:focus {
+        color: #fff;
         text-decoration: underline;
+    }
+    a:hover,
+    a:focus {
+        text-decoration: none;
         outline: none;
     }
     .general-contact h3 {
         font-weight: 700;
         font-size: 1.25em;
-        color: #0a418f;
         margin-bottom: 12px;
     }
     .whatsapp-list {
@@ -1337,16 +1339,15 @@ document.addEventListener("DOMContentLoaded", function () {
         padding-left: 0;
         margin: 0 0 30px 0;
         font-size: 0.95em;
+        color: #fff;
     }
     .whatsapp-list li {
         margin-bottom: 6px;
     }
-    .registration-note p {
-        font-size: 1em;
-    }
     .registration-note a {
         font-weight: 700;
-        color: #0a418f;
+        color: #fff;
+        text-decoration: underline;
     }
 </style>
 
