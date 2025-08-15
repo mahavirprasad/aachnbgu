@@ -133,66 +133,87 @@
         </div>
       </div>
 
-<!-- Navigation -->
-<nav aria-label="Main navigation">
-  <ul class="nav-list">
-    <li><a href="#conference">Conference</a></li>
-    <li><a href="#committees">Committees</a></li>
-    <li><a href="#themes">Themes</a></li>
-    <li><a href="#speakers">Speakers</a></li>
-    <li><a href="#dates">Important Dates</a></li>
-    <li><a href="#registration">Registration</a></li>
-    <li><a href="#abstract">Abstract</a></li>
-    <li><a href="download/IMCAAC-2025-HNBGU-Brochure.pdf" target="_blank" rel="noopener noreferrer">Brochure</a></li>
-    <li><a href="#contact">Contact</a></li>
+<!-- Professional Conference Navigation -->
+<nav class="conference-nav" aria-label="Main navigation">
+  <ul>
+    <li><a href="#conference">CONFERENCE</a></li>
+    <li><a href="#committees">COMMITTEES</a></li>
+    <li><a href="#themes">THEMES</a></li>
+    <li><a href="#speakers">SPEAKERS</a></li>
+    <li><a href="#dates">IMPORTANT DATES</a></li>
+    <li><a href="#registration">REGISTRATION</a></li>
+    <li><a href="#abstract">ABSTRACT</a></li>
+    <li><a href="download/IMCAAC-2025-HNBGU-Brochure.pdf" target="_blank" rel="noopener noreferrer">BROCHURE</a></li>
+    <li><a href="#contact">CONTACT</a></li>
   </ul>
 </nav>
 
 <style>
-  /* Navigation Styles */
-  nav {
-    background-color: #004080; /* University brand color */
-    padding: 0.5rem 1rem;
+.conference-nav {
+  background: #0a418f; /* Deep Blue */
+  margin: 32px auto 0 auto;
+  padding: 0.5em 2vw;
+  border-radius: 6px;
+  border: 2px solid #fff;
+  max-width: 90vw;
+  box-sizing: border-box;
+}
+.conference-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.conference-nav li {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  position: relative;
+}
+.conference-nav li:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 32px;
+  background: #fff;
+  margin: 0 22px;
+  border-radius: 2px;
+}
+.conference-nav a {
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.07em;
+  text-decoration: none;
+  letter-spacing: 1px;
+  padding: 18px 0 18px 0;
+  transition: color 0.26s;
+}
+.conference-nav a:hover,
+.conference-nav a:focus {
+  color: #ffcc00; /* Gold highlight on hover */
+  outline: none;
+}
+/* Responsive: stack vertically on small screens */
+@media (max-width: 900px) {
+  .conference-nav ul { flex-wrap: wrap; }
+  .conference-nav li { margin-bottom: 6px; }
+  .conference-nav li:not(:last-child)::after {
+    height: 16px;
+    margin: 0 10px;
   }
-
-  .nav-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-list li {
-    margin: 0 1rem;
-  }
-
-  .nav-list a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-
-  .nav-list a:hover,
-  .nav-list a:focus {
-    color: #ffcc00; /* Highlight color */
-    outline: none;
-  }
-
-  /* Responsive Navigation */
-  @media (max-width: 600px) {
-    .nav-list {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .nav-list li {
-      margin: 0.5rem 0;
-    }
-  }
+}
+@media (max-width: 600px) {
+  .conference-nav ul { flex-direction: column; }
+  .conference-nav li:not(:last-child)::after { display: none; }
+  .conference-nav a { padding: 13px 0 13px 0; font-size: 1em; }
+}
 </style>
 		
     </header>
